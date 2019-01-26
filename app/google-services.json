@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "418703302012",
+    "firebase_url": "https://martymessage-b4a84.firebaseio.com",
+    "project_id": "martymessage-b4a84",
+    "storage_bucket": "martymessage-b4a84.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:418703302012:android:aa0a29167c3d34ea",
+        "android_client_info": {
+          "package_name": "com.example.ketzal.testpushnotifications"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "418703302012-fgodg38m1enbk7amakqb87tsbqpnohl7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.ketzal.testpushnotifications",
+            "certificate_hash": "2df86e8a62c4998af4417023e119e3449a4c70bc"
+          }
+        },
+        {
+          "client_id": "418703302012-9lugko2c1pgeuaps3oav66j5g1o42rlc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQ7VM7tHQDOzM9nzF73srBvPJ03XgA37A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "418703302012-9lugko2c1pgeuaps3oav66j5g1o42rlc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
