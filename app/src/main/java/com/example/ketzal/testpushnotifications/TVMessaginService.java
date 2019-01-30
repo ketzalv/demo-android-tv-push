@@ -33,7 +33,7 @@ public class TVMessaginService extends FirebaseMessagingService {
             }
 
         }
-        handleNow("Se recibio push: " + remoteMessage.getNotification().getBody());
+        handleNow(remoteMessage.getNotification().getBody());
 
         // Check if message contains a notification payload.
         if (remoteMessage.getNotification() != null) {

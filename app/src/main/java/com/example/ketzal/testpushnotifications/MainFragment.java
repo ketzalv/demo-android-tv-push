@@ -118,7 +118,7 @@ public class MainFragment extends BrowseFragment {
         gridRowAdapter.add(getResources().getString(R.string.personal_settings));
         rowsAdapter.add(new ListRow(gridHeader, gridRowAdapter));
 
-        setAdapter(rowsAdapter);
+//        setAdapter(rowsAdapter);
     }
 
     private void prepareBackgroundManager() {
