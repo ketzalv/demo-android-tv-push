@@ -20,7 +20,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.ketzal.testpushnotifications.utils.ViewTooltip;
 
 import static com.example.ketzal.testpushnotifications.TVMessaginService.KEY_MESSAGE;
 import static com.example.ketzal.testpushnotifications.TVMessaginService.SHOW_MESSAGE;
@@ -29,6 +37,8 @@ import static com.example.ketzal.testpushnotifications.TVMessaginService.SHOW_ME
  * MainActivity class that loads {@link MainFragment}.
  */
 public class MainActivity extends Activity {
+    View dotView;
+    ViewTooltip.TooltipView tooltip;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +47,7 @@ public class MainActivity extends Activity {
         IntentFilter filter = new IntentFilter();
         filter.addAction(SHOW_MESSAGE);
         registerReceiver(receiver, filter);
+        dotView = findViewById(R.id.view_dot_black);
     }
 
 
@@ -44,7 +55,25 @@ public class MainActivity extends Activity {
         @Override
         public void onReceive(Context context, Intent intent) {
             String message = intent.getStringExtra(KEY_MESSAGE);
-            Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+            showAlert(message);
         }
     };
+
+    private void showAlert(String message){
+        FrameLayout layout = new FrameLayout(this);
+        FrameLayout.LayoutParams params = new FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        layout.setLayoutParams(params);
+        View view = LayoutInflater.from(layout.getContext()).inflate(R.layout.layout_push_notification, layout, true);
+        TextView tvMessage = view.findViewById(R.id.text_push);
+        tvMessage.setText(message);
+        tooltip = ViewTooltip.on(dotView)
+                .align(ViewTooltip.ALIGN.CENTER)
+                .position(ViewTooltip.Position.LEFT)
+                .withShadow(true)
+                .shadowColor(ContextCompat.getColor(this, R.color.default_background))
+                .color(ContextCompat.getColor(this, R.color.white))
+                .clickToHide(true)
+                .customView(layout)
+                .show();
+    }
 }

@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_browse_fragment"
-    android:name="com.example.ketzal.testpushnotifications.MainFragment"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    tools:deviceIds="tv"
-    tools:ignore="MergeRootFrame" />
+    android:layout_height="match_parent">
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main_browse_fragment"
+        android:name="com.example.ketzal.testpushnotifications.MainFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        tools:deviceIds="tv"
+        tools:ignore="MergeRootFrame" />
+    <View
+        android:id="@+id/view_dot_black"
+        android:background="@android:color/black"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="16dp"
+        android:layout_width="10dp"
+        android:layout_height="10dp"/>
+</android.support.design.widget.CoordinatorLayout>
